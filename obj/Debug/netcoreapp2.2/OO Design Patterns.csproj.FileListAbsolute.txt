@@ -1,0 +1,11 @@
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/bin/Debug/netcoreapp2.2/OO Design Patterns.deps.json
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/bin/Debug/netcoreapp2.2/OO Design Patterns.runtimeconfig.json
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/bin/Debug/netcoreapp2.2/OO Design Patterns.runtimeconfig.dev.json
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/bin/Debug/netcoreapp2.2/OO Design Patterns.dll
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/bin/Debug/netcoreapp2.2/OO Design Patterns.pdb
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.csprojAssemblyReference.cache
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.csproj.CoreCompileInputs.cache
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.AssemblyInfoInputs.cache
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.AssemblyInfo.cs
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.dll
+/Users/chao/Desktop/Projects/C#/OO Design Patterns/obj/Debug/netcoreapp2.2/OO Design Patterns.pdb
