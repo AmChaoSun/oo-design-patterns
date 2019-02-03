@@ -11,22 +11,24 @@ namespace OO_Design_Patterns
 
 
 
-            //Chapter 1 SimpleFactory
-            Console.WriteLine("Input operator");
-            string op = Console.ReadLine();
-            var operation = OperationFactory.CreateOperation(op);
+            // //Chapter 1 SimpleFactory
+            // //Only accept +, -, *, / operations
 
-            Console.WriteLine("Input NumA:");
-            string stringNumA = Console.ReadLine();
-            Console.WriteLine("Input NumB:");
-            string stringNumB = Console.ReadLine();
-            double numA = Convert.ToDouble(stringNumA);
-            double numB = Convert.ToDouble(stringNumB);
+            // Console.WriteLine("Input operator");
+            // string op = Console.ReadLine();
+            // var operation = OperationFactory.CreateOperation(op);
 
-            operation.NumA = numA;
-            operation.NumB = numB;
-            var result = operation.GetResult();
-            Console.WriteLine("Result is " + result);
+            // Console.WriteLine("Input NumA:");
+            // string stringNumA = Console.ReadLine();
+            // Console.WriteLine("Input NumB:");
+            // string stringNumB = Console.ReadLine();
+            // double numA = Convert.ToDouble(stringNumA);
+            // double numB = Convert.ToDouble(stringNumB);
+
+            // operation.NumA = numA;
+            // operation.NumB = numB;
+            // var result = operation.GetResult();
+            // Console.WriteLine("Result is " + result);
         }
     }
 }

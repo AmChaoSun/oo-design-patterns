@@ -1,5 +1,6 @@
 namespace OO_Design_Patterns.SimpleFactory
 {
+    //only have +, -, *, /
     public class OperationFactory
     {
         public static GenericOperation CreateOperation(string oprator)
