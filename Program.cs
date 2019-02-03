@@ -1,5 +1,6 @@
 ﻿using System;
 using OO_Design_Patterns.SimpleFactory;
+using OO_Design_Patterns.Strategy;
 
 namespace OO_Design_Patterns
 {
@@ -10,6 +11,18 @@ namespace OO_Design_Patterns
             Console.WriteLine("Hello World!");
 
 
+            //Chapter 2 Strategy
+            // double total = 0.0d;
+            // string rule = "somestring";
+            // string price = null;
+            // string num = null;
+            // void btnOkClick(object sender, EventArgs e)
+            // {
+            //     CashContext cc = new CashContext(rule);
+            //     double totalPrices = 0.0d;
+            //     totalPrices = cc.GetResult(double.Parse(price) * double.Parse(num));
+            //     total = total + totalPrices;
+            // }
 
             // //Chapter 1 SimpleFactory
             // //Only accept +, -, *, / operations
