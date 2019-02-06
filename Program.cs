@@ -1,7 +1,8 @@
 ﻿using System;
 // using OO_Design_Patterns.SimpleFactory;
 // using OO_Design_Patterns.Strategy;
-using OO_Design_Patterns.Decorator;
+// using OO_Design_Patterns.Decorator;
+using OO_Design_Patterns.Proxy;
 
 namespace OO_Design_Patterns
 {
@@ -11,13 +12,23 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
+
+            //Chapter 4 Proxy
+            var mary = new SchoolGirl("Mary");
+
+            var charles = new Agent(mary);
+
+            charles.GiveChocolate();
+            charles.GiveDoll();
+            charles.GiveFlowers();
+
             // Chapter 3 Decorator
-            var charles = new Person("Charles");
-            var sneaker = new Sneaker();
-            var tShirt = new TShirt();
-            sneaker.Decorate(charles);
-            tShirt.Decorate(sneaker);
-            tShirt.Show();
+            // var charles = new Person("Charles");
+            // var sneaker = new Sneaker();
+            // var tShirt = new TShirt();
+            // sneaker.Decorate(charles);
+            // tShirt.Decorate(sneaker);
+            // tShirt.Show();
             //Chapter 2 Strategy
             // double total = 0.0d;
             // string rule = "somestring";
