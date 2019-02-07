@@ -2,7 +2,8 @@
 // using OO_Design_Patterns.SimpleFactory;
 // using OO_Design_Patterns.Strategy;
 // using OO_Design_Patterns.Decorator;
-using OO_Design_Patterns.Proxy;
+// using OO_Design_Patterns.Proxy;
+using OO_Design_Patterns.Factory;
 
 namespace OO_Design_Patterns
 {
@@ -12,15 +13,24 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
+            // Chapter 5 Factory Model VS Simple Factory Model
+            //Simple Factory
+            GoodMan undergraduate = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("undergraduate");
+            GoodMan volunteer = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("volunteer");
 
-            //Chapter 4 Proxy
-            var mary = new SchoolGirl("Mary");
+            //Factory
+            IFactory volunteerFactory = new VolunteerFactory();
+            GoodMan volunteer2 = volunteerFactory.CreateGoodMan();
+            IFactory undergraduateFactory = new UndergraduateFactory();
+            GoodMan undergraduate2 = undergraduateFactory.CreateGoodMan();
+            // //Chapter 4 Proxy
+            // var mary = new SchoolGirl("Mary");
 
-            var charles = new Agent(mary);
+            // var charles = new Agent(mary);
 
-            charles.GiveChocolate();
-            charles.GiveDoll();
-            charles.GiveFlowers();
+            // charles.GiveChocolate();
+            // charles.GiveDoll();
+            // charles.GiveFlowers();
 
             // Chapter 3 Decorator
             // var charles = new Person("Charles");
