@@ -3,7 +3,8 @@
 // using OO_Design_Patterns.Strategy;
 // using OO_Design_Patterns.Decorator;
 // using OO_Design_Patterns.Proxy;
-using OO_Design_Patterns.Factory;
+// using OO_Design_Patterns.Factory;
+using OO_Design_Patterns.Prototype;
 
 namespace OO_Design_Patterns
 {
@@ -13,17 +14,32 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 5 Factory Model VS Simple Factory Model
-            //Simple Factory
-            GoodMan undergraduate = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("undergraduate");
-            GoodMan volunteer = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("volunteer");
+            // Chapter 9 Prototype
+            Resume charles = new Resume("Charles");
+            charles.Age = 25;
+            charles.Gender = "Male";
+            charles.Work = new WorkExperience("Google", "2018-2020");
+            charles.Display();
 
-            //Factory
-            IFactory volunteerFactory = new VolunteerFactory();
-            GoodMan volunteer2 = volunteerFactory.CreateGoodMan();
-            IFactory undergraduateFactory = new UndergraduateFactory();
-            GoodMan undergraduate2 = undergraduateFactory.CreateGoodMan();
-            // //Chapter 4 Proxy
+            Resume charlesV1 = (Resume)charles.Clone();
+            charlesV1.Work = new WorkExperience("Microsoft", "2018-2020");
+            charles.Display();
+            charlesV1.Display();
+
+
+            // // Chapter 8 Factory Model VS Simple Factory Model
+            // //Simple Factory
+            // GoodMan undergraduate = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("undergraduate");
+            // GoodMan volunteer = OO_Design_Patterns.Factory.SimpleFactory.CreateGoodMan("volunteer");
+
+            // //Factory
+            // IFactory volunteerFactory = new VolunteerFactory();
+            // GoodMan volunteer2 = volunteerFactory.CreateGoodMan();
+            // IFactory undergraduateFactory = new UndergraduateFactory();
+            // GoodMan undergraduate2 = undergraduateFactory.CreateGoodMan();
+
+
+            // //Chapter 7 Proxy
             // var mary = new SchoolGirl("Mary");
 
             // var charles = new Agent(mary);
@@ -32,7 +48,7 @@ namespace OO_Design_Patterns
             // charles.GiveDoll();
             // charles.GiveFlowers();
 
-            // Chapter 3 Decorator
+            // Chapter 6 Decorator
             // var charles = new Person("Charles");
             // var sneaker = new Sneaker();
             // var tShirt = new TShirt();
