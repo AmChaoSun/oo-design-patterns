@@ -4,7 +4,9 @@
 // using OO_Design_Patterns.Decorator;
 // using OO_Design_Patterns.Proxy;
 // using OO_Design_Patterns.Factory;
-using OO_Design_Patterns.Prototype;
+// using OO_Design_Patterns.Prototype;
+// using OO_Design_Patterns.TemplateMethod;
+using OO_Design_Patterns.Facade;
 
 namespace OO_Design_Patterns
 {
@@ -14,17 +16,25 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 9 Prototype
-            Resume charles = new Resume("Charles");
-            charles.Age = 25;
-            charles.Gender = "Male";
-            charles.Work = new WorkExperience("Google", "2018-2020");
-            charles.Display();
+            // Chapter 12 Facade
+            var facade = new Facade.Facade();
 
-            Resume charlesV1 = (Resume)charles.Clone();
-            charlesV1.Work = new WorkExperience("Microsoft", "2018-2020");
-            charles.Display();
-            charlesV1.Display();
+            facade.MethodA();
+            facade.MethodB();
+
+
+
+            // Chapter 9 Prototype
+            // Resume charles = new Resume("Charles");
+            // charles.Age = 25;
+            // charles.Gender = "Male";
+            // charles.Work = new WorkExperience("Google", "2018-2020");
+            // charles.Display();
+
+            // Resume charlesV1 = (Resume)charles.Clone();
+            // charlesV1.Work = new WorkExperience("Microsoft", "2018-2020");
+            // charles.Display();
+            // charlesV1.Display();
 
 
             // // Chapter 8 Factory Model VS Simple Factory Model
