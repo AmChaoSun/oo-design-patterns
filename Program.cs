@@ -7,7 +7,8 @@
 // using OO_Design_Patterns.Prototype;
 // using OO_Design_Patterns.TemplateMethod;
 // using OO_Design_Patterns.Facade;
-using OO_Design_Patterns.Builder;
+// using OO_Design_Patterns.Builder;
+using OO_Design_Patterns.PublishSubscribe;
 
 namespace OO_Design_Patterns
 {
@@ -17,17 +18,34 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 13 Builder
-            Builder.Builder builderA = new ConcreteBuilderA();
-            Builder.Builder builderB = new ConcreteBuilderB();
+            // Chapter 14 Publish/Subscribe and delegate
 
-            Director.Construct(builderA);
-            Product pA = builderA.GetProduct();
-            pA.Show();
+            // create publisher and subscriptions
+            Boss charles = new Boss();
+            StockObserver julie = new StockObserver("Julie", charles);
+            NBAObserver zak = new NBAObserver("Zak", charles);
 
-            Director.Construct(builderB);
-            Product pB = builderB.GetProduct();
-            pB.Show();
+            // bind event
+            charles.Update += new Boss.EventHandler(julie.ClockStockMarket);
+            charles.Update += new Boss.EventHandler(zak.ClockNBADirectSeeding);
+
+            //trigger
+            charles.SubjectState = "Charles is coming";
+            charles.Notify();
+
+
+
+            // // Chapter 13 Builder
+            // Builder.Builder builderA = new ConcreteBuilderA();
+            // Builder.Builder builderB = new ConcreteBuilderB();
+
+            // Director.Construct(builderA);
+            // Product pA = builderA.GetProduct();
+            // pA.Show();
+
+            // Director.Construct(builderB);
+            // Product pB = builderB.GetProduct();
+            // pB.Show();
 
 
 
