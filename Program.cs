@@ -6,7 +6,8 @@
 // using OO_Design_Patterns.Factory;
 // using OO_Design_Patterns.Prototype;
 // using OO_Design_Patterns.TemplateMethod;
-using OO_Design_Patterns.Facade;
+// using OO_Design_Patterns.Facade;
+using OO_Design_Patterns.Builder;
 
 namespace OO_Design_Patterns
 {
@@ -16,13 +17,25 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 12 Facade
-            var facade = new Facade.Facade();
+            // Chapter 13 Builder
+            Builder.Builder builderA = new ConcreteBuilderA();
+            Builder.Builder builderB = new ConcreteBuilderB();
 
-            facade.MethodA();
-            facade.MethodB();
+            Director.Construct(builderA);
+            Product pA = builderA.GetProduct();
+            pA.Show();
+
+            Director.Construct(builderB);
+            Product pB = builderB.GetProduct();
+            pB.Show();
 
 
+
+            // // Chapter 12 Facade
+            // var facade = new Facade.Facade();
+
+            // facade.MethodA();
+            // facade.MethodB();
 
             // Chapter 9 Prototype
             // Resume charles = new Resume("Charles");
