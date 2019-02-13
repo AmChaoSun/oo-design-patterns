@@ -8,7 +8,7 @@
 // using OO_Design_Patterns.TemplateMethod;
 // using OO_Design_Patterns.Facade;
 // using OO_Design_Patterns.Builder;
-using OO_Design_Patterns.PublishSubscribe;
+// using OO_Design_Patterns.PublishSubscribe;
 
 namespace OO_Design_Patterns
 {
@@ -18,20 +18,24 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 14 Publish/Subscribe and delegate
+            //Chapter 15 Reflection and dependency injection
+            //The method on book is old. Now I use constructor and autofac to fix it.
 
-            // create publisher and subscriptions
-            Boss charles = new Boss();
-            StockObserver julie = new StockObserver("Julie", charles);
-            NBAObserver zak = new NBAObserver("Zak", charles);
 
-            // bind event
-            charles.Update += new Boss.EventHandler(julie.ClockStockMarket);
-            charles.Update += new Boss.EventHandler(zak.ClockNBADirectSeeding);
+            // // Chapter 14 Publish/Subscribe and delegate
 
-            //trigger
-            charles.SubjectState = "Charles is coming";
-            charles.Notify();
+            // // create publisher and subscriptions
+            // Boss charles = new Boss();
+            // StockObserver julie = new StockObserver("Julie", charles);
+            // NBAObserver zak = new NBAObserver("Zak", charles);
+
+            // // bind event
+            // charles.Update += new Boss.EventHandler(julie.ClockStockMarket);
+            // charles.Update += new Boss.EventHandler(zak.ClockNBADirectSeeding);
+
+            // //trigger
+            // charles.SubjectState = "Charles is coming";
+            // charles.Notify();
 
 
 
