@@ -9,6 +9,7 @@
 // using OO_Design_Patterns.Facade;
 // using OO_Design_Patterns.Builder;
 // using OO_Design_Patterns.PublishSubscribe;
+using OO_Design_Patterns.AdapterModel;
 
 namespace OO_Design_Patterns
 {
@@ -17,6 +18,10 @@ namespace OO_Design_Patterns
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            //Chapter 17 Adapter Model
+            ITarget target = new Adapter();
+            target.Request();
 
             //Chapter 15 Reflection and dependency injection
             //The method on book is old. Now I use constructor and autofac to fix it.
