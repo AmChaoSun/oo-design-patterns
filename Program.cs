@@ -9,7 +9,8 @@
 // using OO_Design_Patterns.Facade;
 // using OO_Design_Patterns.Builder;
 // using OO_Design_Patterns.PublishSubscribe;
-using OO_Design_Patterns.AdapterModel;
+// using OO_Design_Patterns.AdapterModel;
+using OO_Design_Patterns.MementoModel;
 
 namespace OO_Design_Patterns
 {
@@ -19,9 +20,31 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            //Chapter 17 Adapter Model
-            ITarget target = new Adapter();
-            target.Request();
+            // Chapter 18 Memento Model
+            // init
+            Originor originor = new Originor()
+            {
+                PropertyA = 123,
+                PropertyB = "Unchanged"
+            };
+            originor.Display();
+
+            // save
+            CareTaker c = new CareTaker();
+            c.Memento = originor.Save();
+
+            //change
+            originor.PropertyA = 456;
+            originor.PropertyB = "Changed";
+            originor.Display();
+
+            // recover
+            originor.Recover(c.Memento);
+            originor.Display();
+
+            // //Chapter 17 Adapter Model
+            // ITarget target = new Adapter();
+            // target.Request();
 
             //Chapter 15 Reflection and dependency injection
             //The method on book is old. Now I use constructor and autofac to fix it.
