@@ -10,7 +10,8 @@
 // using OO_Design_Patterns.Builder;
 // using OO_Design_Patterns.PublishSubscribe;
 // using OO_Design_Patterns.AdapterModel;
-using OO_Design_Patterns.MementoModel;
+// using OO_Design_Patterns.MementoModel;
+using OO_Design_Patterns.Sort;
 
 namespace OO_Design_Patterns
 {
@@ -20,27 +21,39 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 18 Memento Model
-            // init
-            Originor originor = new Originor()
-            {
-                PropertyA = 123,
-                PropertyB = "Unchanged"
-            };
-            originor.Display();
+            int[] arr1 = new int[] { 1, 5, 6, 3, 4, 19, 2 };
+            int[] arr2 = new int[] { 8, 1, 12, 7, 9, 21, 3 };
 
-            // save
-            CareTaker c = new CareTaker();
-            c.Memento = originor.Save();
+            ISort mySort1 = new QuickSort(arr1);
+            mySort1.Display();
+            mySort1.AscendSort();
+            mySort1.Display();
 
-            //change
-            originor.PropertyA = 456;
-            originor.PropertyB = "Changed";
-            originor.Display();
+            ISort mySort2 = new QuickSort(arr2);
+            mySort2.Display();
+            mySort2.AscendSort();
+            mySort2.Display();
+            // // Chapter 18 Memento Model
+            // // init
+            // Originor originor = new Originor()
+            // {
+            //     PropertyA = 123,
+            //     PropertyB = "Unchanged"
+            // };
+            // originor.Display();
 
-            // recover
-            originor.Recover(c.Memento);
-            originor.Display();
+            // // save
+            // CareTaker c = new CareTaker();
+            // c.Memento = originor.Save();
+
+            // //change
+            // originor.PropertyA = 456;
+            // originor.PropertyB = "Changed";
+            // originor.Display();
+
+            // // recover
+            // originor.Recover(c.Memento);
+            // originor.Display();
 
             // //Chapter 17 Adapter Model
             // ITarget target = new Adapter();
