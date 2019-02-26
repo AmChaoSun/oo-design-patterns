@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 // using OO_Design_Patterns.SimpleFactory;
 // using OO_Design_Patterns.Strategy;
 // using OO_Design_Patterns.Decorator;
@@ -22,33 +24,85 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 19 Composite mode
-            Company root = new ConcreteCompany("Global Headquater");
-            root.Add(new HRDepartment("Global Headquater HR Department"));
-            root.Add(new FinanceDepartment("Global Headquater Finance Department"));
+            // Chapter 21 Iterator
+            //Mechanism of foreach in
+            IList<string> nameList = new List<string>();
+            nameList.Add("charles");
+            nameList.Add("julie");
+            nameList.Add("zak");
+            nameList.Add("derek");
+            nameList.Add("luke");
+            nameList.Add("allen");
+            nameList.Add("carl");
 
-            Company Australia = new ConcreteCompany("Australia Headquater");
-            Australia.Add(new HRDepartment("Australia Headquater HR Department"));
-            Australia.Add(new FinanceDepartment("Australia Headquater Finance Department"));
-            root.Add(Australia);
+            //foreach in
+            Console.WriteLine("foreach in method");
+            foreach (var name in nameList)
+            {
+                Console.WriteLine(name + " ");
+            }
+            Console.WriteLine();
+            //Iterator
+            Console.WriteLine("Mechanism");
+            IEnumerator<string> nameEnum = nameList.GetEnumerator();
 
-            Company Sydney = new ConcreteCompany("Sydney Office");
-            Sydney.Add(new HRDepartment("Sydney Office HR Department"));
-            Sydney.Add(new FinanceDepartment("Sydney Office Finance Department"));
-            Australia.Add(Sydney);
+            while (nameEnum.MoveNext())
+            {
+                Console.WriteLine(nameEnum.Current + " ");
+            }
+            Console.WriteLine();
 
-            Company Brisbane = new ConcreteCompany("Brisbane Office");
-            Brisbane.Add(new HRDepartment("Brisbane Office HR Department"));
-            Brisbane.Add(new FinanceDepartment("Brisbane Office Finance Department"));
-            Australia.Add(Brisbane);
+            int[] numArr = new int[] { 1, 3, 2, 4, 6 };
+            //foreach in
+            Console.WriteLine("foreach in method");
+            foreach (var num in numArr)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
 
-            // structure
-            root.Display(1);
+            //Iterator
+            Console.WriteLine("Mechanism");
+            IEnumerator numEnum = numArr.GetEnumerator();
 
-            //Duty
-            root.LineOfDuty();
+            while (numEnum.MoveNext())
+            {
+                Console.Write(numEnum.Current + " ");
+            }
+            Console.WriteLine();
+
+            Console.Read();
 
 
+
+            // // Chapter 19 Composite mode
+            // Company root = new ConcreteCompany("Global Headquater");
+            // root.Add(new HRDepartment("Global Headquater HR Department"));
+            // root.Add(new FinanceDepartment("Global Headquater Finance Department"));
+
+            // Company Australia = new ConcreteCompany("Australia Headquater");
+            // Australia.Add(new HRDepartment("Australia Headquater HR Department"));
+            // Australia.Add(new FinanceDepartment("Australia Headquater Finance Department"));
+            // root.Add(Australia);
+
+            // Company Sydney = new ConcreteCompany("Sydney Office");
+            // Sydney.Add(new HRDepartment("Sydney Office HR Department"));
+            // Sydney.Add(new FinanceDepartment("Sydney Office Finance Department"));
+            // Australia.Add(Sydney);
+
+            // Company Brisbane = new ConcreteCompany("Brisbane Office");
+            // Brisbane.Add(new HRDepartment("Brisbane Office HR Department"));
+            // Brisbane.Add(new FinanceDepartment("Brisbane Office Finance Department"));
+            // Australia.Add(Brisbane);
+
+            // // structure
+            // root.Display(1);
+
+            // //Duty
+            // root.LineOfDuty();
+
+
+            // Quick Sort
             // int[] arr1 = new int[] { 1, 5, 6, 3, 4, 19, 2 };
             // int[] arr2 = new int[] { 8, 1, 12, 7, 9, 21, 3 };
 
