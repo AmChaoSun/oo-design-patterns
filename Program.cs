@@ -11,7 +11,8 @@
 // using OO_Design_Patterns.PublishSubscribe;
 // using OO_Design_Patterns.AdapterModel;
 // using OO_Design_Patterns.MementoModel;
-using OO_Design_Patterns.Sort;
+// using OO_Design_Patterns.Sort;
+using OO_Design_Patterns.CompositeMode;
 
 namespace OO_Design_Patterns
 {
@@ -21,18 +22,45 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            int[] arr1 = new int[] { 1, 5, 6, 3, 4, 19, 2 };
-            int[] arr2 = new int[] { 8, 1, 12, 7, 9, 21, 3 };
+            // Chapter 19 Composite mode
+            Company root = new ConcreteCompany("Global Headquater");
+            root.Add(new HRDepartment("Global Headquater HR Department"));
+            root.Add(new FinanceDepartment("Global Headquater Finance Department"));
 
-            ISort mySort1 = new QuickSort(arr1);
-            mySort1.Display();
-            mySort1.AscendSort();
-            mySort1.Display();
+            Company Australia = new ConcreteCompany("Australia Headquater");
+            Australia.Add(new HRDepartment("Australia Headquater HR Department"));
+            Australia.Add(new FinanceDepartment("Australia Headquater Finance Department"));
+            root.Add(Australia);
 
-            ISort mySort2 = new QuickSort(arr2);
-            mySort2.Display();
-            mySort2.AscendSort();
-            mySort2.Display();
+            Company Sydney = new ConcreteCompany("Sydney Office");
+            Sydney.Add(new HRDepartment("Sydney Office HR Department"));
+            Sydney.Add(new FinanceDepartment("Sydney Office Finance Department"));
+            Australia.Add(Sydney);
+
+            Company Brisbane = new ConcreteCompany("Brisbane Office");
+            Brisbane.Add(new HRDepartment("Brisbane Office HR Department"));
+            Brisbane.Add(new FinanceDepartment("Brisbane Office Finance Department"));
+            Australia.Add(Brisbane);
+
+            // structure
+            root.Display(1);
+
+            //Duty
+            root.LineOfDuty();
+
+
+            // int[] arr1 = new int[] { 1, 5, 6, 3, 4, 19, 2 };
+            // int[] arr2 = new int[] { 8, 1, 12, 7, 9, 21, 3 };
+
+            // ISort mySort1 = new QuickSort(arr1);
+            // mySort1.Display();
+            // mySort1.AscendSort();
+            // mySort1.Display();
+
+            // ISort mySort2 = new QuickSort(arr2);
+            // mySort2.Display();
+            // mySort2.AscendSort();
+            // mySort2.Display();
             // // Chapter 18 Memento Model
             // // init
             // Originor originor = new Originor()
