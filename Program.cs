@@ -14,7 +14,8 @@ using System.Collections.Generic;
 // using OO_Design_Patterns.AdapterModel;
 // using OO_Design_Patterns.MementoModel;
 // using OO_Design_Patterns.Sort;
-using OO_Design_Patterns.CompositeMode;
+// using OO_Design_Patterns.CompositeMode;
+using OO_Design_Patterns.BridgeMode;
 
 namespace OO_Design_Patterns
 {
@@ -24,55 +25,62 @@ namespace OO_Design_Patterns
         {
             Console.WriteLine("Hello World!");
 
-            // Chapter 21 Iterator
-            //Mechanism of foreach in
-            IList<string> nameList = new List<string>();
-            nameList.Add("charles");
-            nameList.Add("julie");
-            nameList.Add("zak");
-            nameList.Add("derek");
-            nameList.Add("luke");
-            nameList.Add("allen");
-            nameList.Add("carl");
+            // Chapter 22 Bridge Mode
+            // //init
+            // var something = new RefinedAbstraction();
+            // something.SetImplementor(new ConcreteImplementor());
 
-            //foreach in
-            Console.WriteLine("foreach in method");
-            foreach (var name in nameList)
-            {
-                Console.WriteLine(name + " ");
-            }
-            Console.WriteLine();
-            //Iterator
-            Console.WriteLine("Mechanism");
-            IEnumerator<string> nameEnum = nameList.GetEnumerator();
+            // //operate
+            // something.Operation();
 
-            while (nameEnum.MoveNext())
-            {
-                Console.WriteLine(nameEnum.Current + " ");
-            }
-            Console.WriteLine();
+            // // Chapter 21 Iterator
+            // //Mechanism of foreach in
+            // IList<string> nameList = new List<string>();
+            // nameList.Add("charles");
+            // nameList.Add("julie");
+            // nameList.Add("zak");
+            // nameList.Add("derek");
+            // nameList.Add("luke");
+            // nameList.Add("allen");
+            // nameList.Add("carl");
 
-            int[] numArr = new int[] { 1, 3, 2, 4, 6 };
-            //foreach in
-            Console.WriteLine("foreach in method");
-            foreach (var num in numArr)
-            {
-                Console.Write(num + " ");
-            }
-            Console.WriteLine();
+            // //foreach in
+            // Console.WriteLine("foreach in method");
+            // foreach (var name in nameList)
+            // {
+            //     Console.WriteLine(name + " ");
+            // }
+            // Console.WriteLine();
+            // //Iterator
+            // Console.WriteLine("Mechanism");
+            // IEnumerator<string> nameEnum = nameList.GetEnumerator();
 
-            //Iterator
-            Console.WriteLine("Mechanism");
-            IEnumerator numEnum = numArr.GetEnumerator();
+            // while (nameEnum.MoveNext())
+            // {
+            //     Console.WriteLine(nameEnum.Current + " ");
+            // }
+            // Console.WriteLine();
 
-            while (numEnum.MoveNext())
-            {
-                Console.Write(numEnum.Current + " ");
-            }
-            Console.WriteLine();
+            // int[] numArr = new int[] { 1, 3, 2, 4, 6 };
+            // //foreach in
+            // Console.WriteLine("foreach in method");
+            // foreach (var num in numArr)
+            // {
+            //     Console.Write(num + " ");
+            // }
+            // Console.WriteLine();
 
-            Console.Read();
+            // //Iterator
+            // Console.WriteLine("Mechanism");
+            // IEnumerator numEnum = numArr.GetEnumerator();
 
+            // while (numEnum.MoveNext())
+            // {
+            //     Console.Write(numEnum.Current + " ");
+            // }
+            // Console.WriteLine();
+
+            // Console.Read();
 
 
             // // Chapter 19 Composite mode
